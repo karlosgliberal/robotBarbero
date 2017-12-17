@@ -6,7 +6,13 @@
   <meta name="keywords" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link href="https://fonts.googleapis.com/css?family=Cardo|Oswald|Pathway+Gothic+One" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Cardo|Oswald|Pathway+Gothic+One" rel="stylesheet">  <script src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
+  <script src="js/clmtrackr.js"></script>
+  <script src="js/model_pca_20_svm.js"></script>
+  <script src="js/p5.js" type="text/javascript"></script>
+  <script src="js/p5.dom.js" type="text/javascript"></script>
+  <script src="js/p5.svg.js" type="text/javascript"></script>
+  <script src="sketch/sketch_barbas.js" type="text/javascript"></script>
   <link rel="stylesheet" href="css/style.css">
   <title>Feliz 2018 - Año de las ciberbarbas.</title>
 </head>
@@ -66,7 +72,7 @@
               Y ese es el <strong>regalo que desde Biko tenemos para ti:</strong> una ciberbarba personalizada y escogida entre los 146.100 diseños de barbas diferentes que el proyecto <strong>QuickDraw</strong> con Inteligencia Artificial de Google ha reunido.
             </p>
           </div>
-          <div class="col-12">
+          <div id="barbas" class="col-12">
             Aqui grid de las barbas
           </div>
         </div>
