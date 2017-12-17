@@ -130,11 +130,23 @@ button:focus {
   background-repeat  : no-repeat;
 }
 
+canvas {
+  position: relative;
+}
+
 .embed-canvas {
   background-color: #ccc;
   width           : 100%;
   height          : 525px;
 }
+
+.embed-barbas-canvas {
+  width           : 100%;
+  height          : 150px;
+  top:0px;
+  position: relative;
+}
+
 
 .btn-cam {
   background-image   : url('../images/cam.svg');

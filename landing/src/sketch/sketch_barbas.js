@@ -1,5 +1,3 @@
-// https://github.com/qiao/PathFinding.js/
-
 var config = {
   apiKey: "AIzaSyA0jhHDWUKFTRsoyv1CaV3XNJ8ffHgAmkw",
   authDomain: "bato-fwcsaf.firebaseapp.com",
@@ -16,18 +14,16 @@ var barbas = [];
 var barbasId = [randomDos(), randomDos(), randomDos(), randomDos()];
 var barbasIteradores = [0, 0, 0, 0];
 var cnv;
+var _movingSize = 0.7;
+var translateBarba = 200
 
 
 function setup() {
 
-  cnv = createCanvas(900, 300);
+  cnv = createCanvas(900, 150);
   centerCanvas();
   cnv.parent('barbas');
-
-  // var x = (windowWidth - width) / 2;
-  // var y = (windowHeight - height) / 2;
-  // cnv.position(x, y);
-  //background(0);
+  
   for (var i = 0; i < barbasId.length; i++) {
     getData(barbasId[i]);
   }
@@ -45,7 +41,6 @@ function randomDos(){
 }
 
 function locura(barbas){
-  var _movingSize = 0.7;
   var drawDataMoving = barbas;
   var lastSeenKey;
   strokeWeight(2);
@@ -98,6 +93,8 @@ function getData(id) {  // preload() runs once
 function centerCanvas() {
   var x = (windowWidth - width) / 2;
   var y = (windowHeight - height) / 2;
+  _movingSize = map(x,270,-250,0.6,0.2);
+  console.log(_movingSize);
   cnv.position(x, y);
 }
 
