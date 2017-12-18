@@ -19,8 +19,8 @@ var barbasIteradores = [0];
 var cnv;
 var _movingSize = 0.7;
 var translateBarba = 200
-
 var capture;
+var videoInput;
 
 
 function centerCanvas() {
@@ -34,21 +34,20 @@ function randomDos(){
 }
 
 function setup() {
-
   for (var i = 0; i < barbasId.length; i++) {
     getData(barbasId[i]);
   }
-  var videoInput = createCapture(VIDEO);
+  videoInput = createCapture(VIDEO);
   videoInput.parent('embed-canvas');
   videoInput.position(100, 200);
   videoInput.id("v");
   var mv = document.getElementById("v");
   mv.muted = true;
   videoInput.size(600, 400);
+  videoInput.hide();
 
   cnv = createCanvas(600, 400);
   centerCanvas();
-
   cnv.parent('embed-canvas');
   cnv.position(100, 200);
 
@@ -74,6 +73,7 @@ function draw() {
 function locura(barbas){
 
   clear();
+  image(videoInput,0,0,600,400)
   var positions = ctracker.getCurrentPosition();
   if(positions.length > 0) {
     var p1 = createVector(positions[7][0], positions[7][1] );
