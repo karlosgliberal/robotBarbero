@@ -58,7 +58,7 @@ function locura(barbas){
       }
     }
     barbasIteradores[b]++;
-    translate(translateBarba, 10);
+    translate(translateBarba, 0);
   }
 }
 

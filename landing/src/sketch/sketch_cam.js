@@ -65,7 +65,7 @@ function draw() {
 }
 
 function locura(barbas){
-  //clear();
+  clear();
   image(videoInput,0,0,600,400)
   var positions = ctracker.getCurrentPosition();
   if(positions.length > 0) {
