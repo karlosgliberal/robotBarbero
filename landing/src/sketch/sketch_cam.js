@@ -55,25 +55,18 @@ function setup() {
   ctracker = new clm.tracker();
   ctracker.init(pModel);
   ctracker.start(videoInput.elt);
-  //myImage = loadImage("images/labarba.png");
-
-
-
-  //capture.hide();
 }
 
 function draw() {
-
   if(typeof(barbas) != 'undefined'){
+    clear();
     locura(barbas);
   }
-
 }
 
 function locura(barbas){
-
-  clear();
-  image(videoInput,0,0,600,400)
+  //clear();
+  //image(videoInput,0,0,600,400)
   var positions = ctracker.getCurrentPosition();
   if(positions.length > 0) {
     var p1 = createVector(positions[7][0], positions[7][1] );
@@ -108,12 +101,22 @@ function locura(barbas){
     }
 
   }
-
-
 }
 
-function getData(id) {  // preload() runs once
-  //var rnd = random(1, 165200); "5943952282746880"
+function keyPressed() {
+  if (keyCode === LEFT_ARROW) {
+    clear();
+  } else if (keyCode === RIGHT_ARROW) {
+    clear();
+    barbasId = [randomDos()];
+    getData(barbasId[0]);
+  } else if (keyCode === ENTER) {
+    save("movida.jpg");
+  }
+}
+
+
+function getData(id) {
   firebase.database().ref('/barbas/'+id).once('value').then(function(snapshot) {
     var barbaKey = snapshot.val();
     console.log(barbaKey);
@@ -121,6 +124,7 @@ function getData(id) {  // preload() runs once
     barbas.push(snapshot.val());
     //}
   }).then(function(){
+    clear();
   });
 }
 
