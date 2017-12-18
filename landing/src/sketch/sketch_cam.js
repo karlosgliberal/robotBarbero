@@ -66,7 +66,7 @@ function draw() {
 
 function locura(barbas){
   //clear();
-  //image(videoInput,0,0,600,400)
+  image(videoInput,0,0,600,400)
   var positions = ctracker.getCurrentPosition();
   if(positions.length > 0) {
     var p1 = createVector(positions[7][0], positions[7][1] );
