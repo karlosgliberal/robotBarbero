@@ -116,9 +116,8 @@ function keyPressed() {
   }
 }
 
-function negro(){
-  background(0);
-  clear();
+function guardar(){
+  save("felizCiberbarba2018.jpg");
 }
 
 function getData(id) {
