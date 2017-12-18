@@ -116,7 +116,7 @@ function keyPressed() {
   }
 }
 
-function guardar(){
+function mousePressed() {
   save("felizCiberbarba2018.jpg");
 }
 
