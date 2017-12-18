@@ -11,19 +11,19 @@ firebase.initializeApp(config);
 var database = firebase.database();
 var rnd = 1;
 var barbas = [];
-var barbasId = [randomDos(), randomDos(), randomDos(), randomDos()];
-var barbasIteradores = [0, 0, 0, 0];
+var barbasId = [randomDos(), randomDos(), randomDos(), randomDos(), randomDos()];
+var barbasIteradores = [0, 0, 0, 0, 0];
 var cnv;
-var _movingSize = 0.7;
-var translateBarba = 200
+var _movingSize = 0.6;
+var translateBarba = 185
 
 
 function setup() {
 
-  cnv = createCanvas(900, 150);
+  cnv = createCanvas(900, 200);
   centerCanvas();
   cnv.parent('barbas');
-  
+
   for (var i = 0; i < barbasId.length; i++) {
     getData(barbasId[i]);
   }
@@ -45,7 +45,7 @@ function locura(barbas){
   var lastSeenKey;
   strokeWeight(2);
   stroke(0);
-  translate(20, 10);
+  translate(10, 10);
 
   for (var b = 0; b < drawDataMoving.length; b++) {
     for (let i = 0; i < drawDataMoving[b].drawing.length; i++) {
@@ -58,7 +58,7 @@ function locura(barbas){
       }
     }
     barbasIteradores[b]++;
-    translate(200, 10);
+    translate(translateBarba, 10);
   }
 }
 
