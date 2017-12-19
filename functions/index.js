@@ -59,9 +59,9 @@ function processV1Request (request, response) {
     'input.welcome': () => {
       // Use the Actions on Google lib to respond to Google requests; for other requests use JSON
       if (requestSource === googleAssistantRequest) {
-        sendGoogleResponse('Hello, Welcome to my Dialogflow agent!'); // Send simple response to user
+        sendGoogleResponse('Hola ¿Quieres una cyber barba?'); // Send simple response to user
       } else {
-        sendResponse('Hello, Welcome to my Dialogflow agent!'); // Send simple response to user
+        sendResponse('Hola ¿Quieres una cyber barba?'); // Send simple response to user
       }
     },
     // The default fallback intent has been matched, try to recover (https://dialogflow.com/docs/intents#fallback_intents)
@@ -122,13 +122,11 @@ function processV1Request (request, response) {
       // Optional: Overwrite previous response with rich response
       if (responseToUser.googleRichResponse) {
         googleResponse = app.buildRichResponse()
-        .addSimpleResponse('Ya eres mi ayudante. \nPero necesitabas una barba y esto es lo que he encotrado parta ti.  \nA que es bonita  \n:)  \nja ja ja')
+        .addSimpleResponse('Bien, Ya tengo tu ciber barba')
         .addBasicCard(app.buildBasicCard(`Soy una Inteligencia artificial y claro barbas para todo el mundo como que no tengo, así que he usado las que ha pintado peña en quickdraw de google.`)
-          .setTitle('Esta es tu Barba de ayudante de robot' )
-          .addButton('Sacate una foto con tu barba, presumido, presumida', 'https://bato-fwcsaf.firebaseapp.com/')
-          .setImage('https://storage.googleapis.com/imaganes-barbas/beard-'+responseToUser.numero+'.jpg',
-          'Image alternate text'))
-          .addSimpleResponse('Sacate una foto con tu barba, presumido, presumida');
+          .setTitle('Esta es tu Barba')
+          .addButton('Sácate una foto con tu barba', 'https://bato-fwcsaf.firebaseapp.com/'))
+          .addSimpleResponse('Sácate una foto con tu barba');
       }
       // Optional: add contexts (https://dialogflow.com/docs/contexts)
       if (responseToUser.googleOutputContexts) {
