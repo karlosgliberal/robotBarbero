@@ -11,7 +11,7 @@ firebase.initializeApp(config);
 var database = firebase.database();
 var rnd = 1;
 var barbas = [];
-var barbasId = [randomDos(), randomDos(), randomDos(), randomDos(), randomDos()];
+var barbasId = [686, randomDos(), randomDos(), randomDos(), randomDos()];
 var barbasIteradores = [0, 0, 0, 0, 0];
 var cnv;
 var _movingSize = 0.6;
@@ -23,16 +23,20 @@ function setup() {
   cnv = createCanvas(900, 200);
   centerCanvas();
   cnv.parent('barbas');
-
   for (var i = 0; i < barbasId.length; i++) {
     getData(barbasId[i]);
   }
+
+  // setInterval(function(){
+  //   barbasId = [randomDos(), randomDos(), randomDos(), randomDos(), randomDos()];
+  //   console.log("setInterval");
+  // }, 10000);
   smooth(2);
 }
 
 function draw() {
   if(typeof(barbas) != 'undefined'){
-      locura(barbas);
+    locura(barbas);
   }
 }
 
@@ -64,12 +68,20 @@ function locura(barbas){
 
 
 function keyPressed() {
-  if (keyCode === UP_ARROW) {
+  if (keyCode === LEFT_ARROW) {
+    console.log("left");
+    var dato = '{"word":"beard","countrycode":"IN","timestamp":"2017-03-18 17:27:42.74233 UTC","recognized":true,"key_id":"4919746145288192","drawing":[[[51,65,77,81,87,93,100,103,112,121,125,129,142,164,174,173,       163,154,135,93,53,32,21,11,6,0,1,18],[149,215,254,254,236,251,235,242,218,244,233,241,142,131,116,89,62,45,29,10,0,1,4,12,20,50,70,99]]]}';
+    var datoObj = JSON.parse(dato);
+    console.log(datoObj);
+    console.log(JSON.parse(datoObj));
+    barbasId.shift();
+    barbasId.push(dato)
+    console.log(barbasId);
+    for (var i = 0; i < barbasId.length; i++) {
+      getData(barbasId[i]);
+    }
+
     clear();
-    background(0);
-    dosIterator = 0;
-    rnd++;
-    getData();
   } else if (keyCode === DOWN_ARROW) {
     getData();
     rnd--;
@@ -82,9 +94,8 @@ function getData(id) {  // preload() runs once
   //var rnd = random(1, 165200); "5943952282746880"
   firebase.database().ref('/barbas/'+id).once('value').then(function(snapshot) {
     var barbaKey = snapshot.val();
-    console.log(barbaKey);
     //if(barbaKey.recognized == true){
-      barbas.push(snapshot.val());
+    barbas.push(snapshot.val());
     //}
   }).then(function(){
   });
