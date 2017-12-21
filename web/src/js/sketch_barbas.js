@@ -11,7 +11,7 @@ firebase.initializeApp(config);
 var database = firebase.database();
 var rnd = 1;
 var barbas = [];
-var barbasId = [randomDos(), randomDos(), randomDos(), randomDos(), randomDos()];
+var barbasId = [686, 214, 1, randomDos(), randomDos()];
 var barbasIteradores = [0, 0, 0, 0, 0];
 var cnv;
 var _movingSize = 0.6;
@@ -23,16 +23,20 @@ function setup() {
   cnv = createCanvas(900, 200);
   centerCanvas();
   cnv.parent('barbas');
-
   for (var i = 0; i < barbasId.length; i++) {
     getData(barbasId[i]);
   }
+
+  // setInterval(function(){
+  //   barbasId = [randomDos(), randomDos(), randomDos(), randomDos(), randomDos()];
+  //   console.log("setInterval");
+  // }, 10000);
   smooth(2);
 }
 
 function draw() {
   if(typeof(barbas) != 'undefined'){
-      locura(barbas);
+    locura(barbas);
   }
 }
 
@@ -48,6 +52,7 @@ function locura(barbas){
   translate(10, 10);
 
   for (var b = 0; b < drawDataMoving.length; b++) {
+    console.log(drawDataMoving);
     for (let i = 0; i < drawDataMoving[b].drawing.length; i++) {
       if(barbasIteradores[b] < drawDataMoving[b].drawing[i][0].length - 1){
         let _x1 = drawDataMoving[b].drawing[i][0][barbasIteradores[b]] * _movingSize;
@@ -64,12 +69,11 @@ function locura(barbas){
 
 
 function keyPressed() {
-  if (keyCode === UP_ARROW) {
+  if (keyCode === LEFT_ARROW) {
+    barbasId.shift();
+    barbasIteradores.shift();
+    getData(1);
     clear();
-    background(0);
-    dosIterator = 0;
-    rnd++;
-    getData();
   } else if (keyCode === DOWN_ARROW) {
     getData();
     rnd--;
@@ -82,13 +86,14 @@ function getData(id) {  // preload() runs once
   //var rnd = random(1, 165200); "5943952282746880"
   firebase.database().ref('/barbas/'+id).once('value').then(function(snapshot) {
     var barbaKey = snapshot.val();
-    console.log(barbaKey);
     //if(barbaKey.recognized == true){
-      barbas.push(snapshot.val());
+    barbas.push(snapshot.val());
     //}
   }).then(function(){
   });
 }
+
+
 
 function centerCanvas() {
   var x = (windowWidth - width) / 2;
