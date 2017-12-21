@@ -6512,10 +6512,20 @@ button:focus {
   background-position: 95% 0;
   background-repeat: no-repeat; }
 
-canvas {
+#embed-canvas canvas#defaultCanvas0 {
+  top: 125px !important;
+  left: 15px !important;
+  position: absolute !important; }
+
+canvas#defaultCanvas0 {
   position: relative !important;
   top: 0 !important;
   left: 0 !important;
+  width: 100% !important;
+  height: auto !important; }
+
+video {
+  position: initial !important;
   width: 100% !important;
   height: auto !important; }
 
