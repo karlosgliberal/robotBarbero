@@ -6456,8 +6456,11 @@ a:focus {
 
 .text-footer {
   font-family: "Pathway Gothic One", sans-serif;
-  font-size: 16px;
+  font-size: 17px;
   color: #ababab; }
+  @media (max-width: 1199px) {
+    .text-footer {
+      font-size: 15px; } }
 
 .nav-bg {
   background-color: #B7153F; }
@@ -6511,6 +6514,12 @@ canvas {
   left: 0 !important;
   width: 100% !important;
   height: auto !important; }
+
+.text-footer__rigth {
+  text-align: left; }
+  @media (min-width: 768px) {
+    .text-footer__rigth {
+      text-align: right; } }
 
 .embed-barbas-canvas {
   width: 100%; }
