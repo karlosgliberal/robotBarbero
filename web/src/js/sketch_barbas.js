@@ -72,6 +72,7 @@ function locura(barbas){
 
 function repintar() {
   clear();
+
   barbasId = [randomDos(), randomDos(), randomDos(), randomDos(), randomDos()];
   barbasIteradores = [0, 0, 0, 0, 0];
   barbas = [];
@@ -105,7 +106,7 @@ function getData(id) {  // preload() runs once
     barbas.push(snapshot.val());
     //}
   }).then(function(){
-    
+
   });
 }
 

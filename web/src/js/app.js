@@ -12,11 +12,11 @@ $('#captura').click(function(event){
 
 $( document ).ready(function() {
   setTimeout(function () {
-    var waypoints = $('#barbas').waypoint(function(direction) {
+    var waypoints = $('#barbasWay').waypoint(function(direction) {
       repintar();
     }, {
       offset: '25%'
     });
 
-  }, 2000);
+  }, 1200);
 })
