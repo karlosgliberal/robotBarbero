@@ -115,7 +115,11 @@ function getData(id) {  // preload() runs once
 function centerCanvas() {
   var x = (windowWidth - width) / 2;
   var y = (windowHeight - height) / 2;
-  _movingSize = map(x,270,-250,0.6,0.2);
+  if(bowser.mobile){
+    _movingSize = map(x,270,-250,0.8,0.4);
+  } else {
+    movingSize = map(x,270,-250,0.6,0.2);
+  }
   cnv.position(x, y);
 }
 
