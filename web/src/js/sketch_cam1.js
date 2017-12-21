@@ -39,14 +39,22 @@ function setup() {
   for (var i = 0; i < barbasId.length; i++) {
     getData(barbasId[i]);
   }
-  videoInput = createCapture(VIDEO);
+  //videoInput = createCapture(VIDEO);
+  var constraints = {
+  audio: false,
+  video: {
+    facingMode: "user"
+  }
+};
+videoInput = createCapture(constraints)
+
   videoInput.parent('embed-canvas');
   videoInput.position(100, 200);
   videoInput.id("v");
   var mv = document.getElementById("v");
   mv.muted = true;
   videoInput.size(600, 400);
-  videoInput.hide();
+  //videoInput.hide();
 
   cnv = createCanvas(600, 400);
   centerCanvas();
@@ -70,7 +78,7 @@ function draw() {
 
 function locura(barbas, visible){
     clear();
-    image(videoInput,0,0,600,400)
+    //image(videoInput,0,0,600,400)
     var positions = ctracker.getCurrentPosition();
     if(positions.length > 0) {
       var p1 = createVector(positions[7][0], positions[7][1] );
@@ -116,7 +124,7 @@ function keyPressed() {
   }
 }
 
-function mousePressed() {
+function captura() {
   save("felizCiberbarba2018.jpg");
 }
 

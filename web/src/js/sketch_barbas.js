@@ -19,18 +19,12 @@ var translateBarba = 185
 
 
 function setup() {
-
   cnv = createCanvas(900, 200);
   centerCanvas();
   cnv.parent('barbas');
   for (var i = 0; i < barbasId.length; i++) {
     getData(barbasId[i]);
   }
-
-  // setInterval(function(){
-  //   barbasId = [randomDos(), randomDos(), randomDos(), randomDos(), randomDos()];
-  //   console.log("setInterval");
-  // }, 10000);
   smooth(2);
 }
 
