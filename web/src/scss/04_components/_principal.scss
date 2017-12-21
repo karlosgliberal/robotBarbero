@@ -95,6 +95,13 @@ a:focus {
   }
 }
 
+.navbar-brand {
+  img {
+    position: relative;
+    top     : -3px;
+  }
+}
+
 .navbar-toggleable-md .navbar-nav .nav-link {
   padding-right: 1rem;
   padding-left : 1rem;
