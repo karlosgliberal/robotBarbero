@@ -73,8 +73,11 @@ a:focus {
 
 .text-footer {
   font-family: $font-path;
-  font-size  : 18px;
-  color      : #cecece;
+  font-size  : 17px;
+  @include media-breakpoint-down(lg) {
+    font-size: 15px;
+  }
+  color      : #ababab;
 }
 
 .nav-bg {
@@ -89,6 +92,13 @@ a:focus {
   &:hover {
     opacity: 0.6;
     color  : $white;
+  }
+}
+
+.navbar-brand {
+  img {
+    position: relative;
+    top     : -3px;
   }
 }
 
@@ -140,11 +150,13 @@ canvas {
   width   : 100% !important;
   height  : auto !important;
 }
-// .embed-canvas {
-//   background-color: #ccc;
-//   width           : 100%;
-//   height          : 525px;
-// }
+
+.text-footer__rigth {
+  text-align: left;
+  @include media-breakpoint-up (md) {
+    text-align: right;
+  }
+}
 
 .embed-barbas-canvas {
   width: 100%;

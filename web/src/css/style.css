@@ -6456,8 +6456,11 @@ a:focus {
 
 .text-footer {
   font-family: "Pathway Gothic One", sans-serif;
-  font-size: 18px;
-  color: #cecece; }
+  font-size: 17px;
+  color: #ababab; }
+  @media (max-width: 1199px) {
+    .text-footer {
+      font-size: 15px; } }
 
 .nav-bg {
   background-color: #B7153F; }
@@ -6471,6 +6474,10 @@ a:focus {
   .nav-link:hover {
     opacity: 0.6;
     color: #fff; }
+
+.navbar-brand img {
+  position: relative;
+  top: -3px; }
 
 .navbar-toggleable-md .navbar-nav .nav-link {
   padding-right: 1rem;
@@ -6511,6 +6518,12 @@ canvas {
   left: 0 !important;
   width: 100% !important;
   height: auto !important; }
+
+.text-footer__rigth {
+  text-align: left; }
+  @media (min-width: 768px) {
+    .text-footer__rigth {
+      text-align: right; } }
 
 .embed-barbas-canvas {
   width: 100%; }
