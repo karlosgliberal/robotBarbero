@@ -39,14 +39,7 @@ function setup() {
   for (var i = 0; i < barbasId.length; i++) {
     getData(barbasId[i]);
   }
-  //videoInput = createCapture(VIDEO);
-  var constraints = {
-  audio: false,
-  video: {
-    facingMode: "user"
-  }
-};
-videoInput = createCapture(constraints)
+  videoInput = createCapture(VIDEO);
 
   videoInput.parent('embed-canvas');
   videoInput.position(100, 200);
