@@ -6512,12 +6512,14 @@ button:focus {
   background-position: 95% 0;
   background-repeat: no-repeat; }
 
-#embed-canvas canvas#defaultCanvas0 {
+#embed-canvas canvas {
   top: 125px !important;
   left: 15px !important;
-  position: absolute !important; }
+  position: absolute !important;
+  width: 100% !important;
+  height: auto !important; }
 
-canvas#defaultCanvas0 {
+#barbas canvas#defaultCanvas0 {
   position: relative !important;
   top: 0 !important;
   left: 0 !important;

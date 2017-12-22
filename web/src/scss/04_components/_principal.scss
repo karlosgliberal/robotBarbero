@@ -144,19 +144,23 @@ button:focus {
 }
 
 #embed-canvas {
-  canvas#defaultCanvas0 {
+  canvas {
     top     : 125px !important;
     left    : 15px !important;
     position: absolute !important;
+    width   : 100% !important;
+    height  : auto !important;
   }
 }
 
-canvas#defaultCanvas0 {
-  position: relative !important;
-  top     : 0 !important;
-  left    : 0 !important;
-  width   : 100% !important;
-  height  : auto !important;
+#barbas {
+  canvas#defaultCanvas0 {
+    position: relative !important;
+    top     : 0 !important;
+    left    : 0 !important;
+    width   : 100% !important;
+    height  : auto !important;
+  }
 }
 
 video {
