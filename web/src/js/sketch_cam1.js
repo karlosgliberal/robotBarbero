@@ -47,7 +47,7 @@ function setup() {
   var mv = document.getElementById("v");
   mv.muted = true;
   videoInput.size(600, 400);
-  //videoInput.hide();
+  videoInput.hide();
 
   cnv = createCanvas(600, 400);
   centerCanvas();
