@@ -145,9 +145,9 @@ button:focus {
 
 #embed-canvas {
   canvas {
-    top     : 125px !important;
-    left    : 15px !important;
-    position: absolute !important;
+    top     : 0px !important;
+    left    : 0px !important;
+    position: relative !important;
     width   : 100% !important;
     height  : auto !important;
   }
