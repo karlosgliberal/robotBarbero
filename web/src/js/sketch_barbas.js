@@ -27,6 +27,7 @@ function setup() {
   for (var i = 0; i < barbasId.length; i++) {
     getData(barbasId[i]);
   }
+  repintar();
   smooth(2);
 }
 

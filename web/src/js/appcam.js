@@ -1,3 +1,3 @@
-if (bowser.ios && bowser.chrome) {
-  alert('Ups! No es lo que parece. Nos gustaría que el robot barbero funcionase en chrome pero.... Visita la web con Safari ');
+if (bowser.ios) {
+  alert('El robot barbero a decidido que esto solo funcione en un ordenador, es un anti moviles');
 }
