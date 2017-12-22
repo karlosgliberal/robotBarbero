@@ -1,3 +1,3 @@
 if (bowser.ios) {
-  alert('El robot barbero ha decidido que esto sólo funcione en un ordenador, es un anti móviles');
+  alert('El Robot Barbero ha decidido que esto sólo funcione en un ordenador, es un anti móviles');
 }
